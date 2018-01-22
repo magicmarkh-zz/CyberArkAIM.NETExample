@@ -1,0 +1,11 @@
+C:\Users\mark\source\repos\CyberArkAIM\CyberArkAIM\bin\CyberArkAIM.dll.config
+C:\Users\mark\source\repos\CyberArkAIM\CyberArkAIM\bin\CyberArkAIM.dll
+C:\Users\mark\source\repos\CyberArkAIM\CyberArkAIM\bin\CyberArkAIM.pdb
+C:\Users\mark\source\repos\CyberArkAIM\CyberArkAIM\bin\Newtonsoft.Json.dll
+C:\Users\mark\source\repos\CyberArkAIM\CyberArkAIM\bin\RestSharp.dll
+C:\Users\mark\source\repos\CyberArkAIM\CyberArkAIM\bin\Newtonsoft.Json.xml
+C:\Users\mark\source\repos\CyberArkAIM\CyberArkAIM\obj\Release\CyberArkAIM.csproj.CoreCompileInputs.cache
+C:\Users\mark\source\repos\CyberArkAIM\CyberArkAIM\obj\Release\CyberArkAIM.dll
+C:\Users\mark\source\repos\CyberArkAIM\CyberArkAIM\obj\Release\CyberArkAIM.pdb
+C:\Users\mark\source\repos\CyberArkAIM\CyberArkAIM\obj\Release\CyberArkAIM.csprojResolveAssemblyReference.cache
+C:\Users\mark\source\repos\CyberArkAIM\CyberArkAIM\bin\RestSharp.xml
