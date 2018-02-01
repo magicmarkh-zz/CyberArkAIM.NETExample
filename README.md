@@ -1,5 +1,7 @@
 # CyberArkAIM.NETExample
-C#, Credentail Provider, Central Credential Provider, Dual Accounts
+Written in C#, tests the Credentail Provider, Central Credential Provider, Dual Accounts
+
+Programs connects to a MSSQL DB and returns the current time of the database. Follow instructions in the CyberArk documentation to set up your environment to support application credentials, and Dual Account credentials. 
 
 
-You will need to recompile the code with the proper CyberArk AIM Dll. Contact your Sales team for a demo license, or contact me directly to find out who your sales contact is. 
+Contact your Sales team for a demo license, or contact me directly to find out who your sales contact is.
