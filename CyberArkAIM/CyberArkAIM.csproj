@@ -12,7 +12,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>CyberArkAIM</RootNamespace>
     <AssemblyName>CyberArkAIM</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
     <IISExpressSSLPort />
@@ -46,8 +46,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="NetPasswordSDK">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\CyberArk\ApplicationPasswordSdk\NetPasswordSDK.dll</HintPath>
+    <Reference Include="NetPasswordSDK, Version=9.95.0.0, Culture=neutral, PublicKeyToken=40be1dbc8718670f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\CyberArk\ApplicationPasswordSdk\FIPSCompliantDLL\NetPasswordSDK.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>

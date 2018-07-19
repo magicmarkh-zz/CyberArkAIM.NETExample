@@ -7,8 +7,7 @@
 *.userosscache
 *.sln.docstates
 
-# CyberArk licensed DLL 
-CyberArkAIM/bin/NetPasswordSDK.dll
+
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 

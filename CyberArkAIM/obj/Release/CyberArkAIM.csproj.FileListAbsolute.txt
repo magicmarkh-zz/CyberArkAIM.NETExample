@@ -17,7 +17,7 @@ C:\Users\mark\source\repos\CyberArkAIM.NETExample\CyberArkAIM\bin\Newtonsoft.Jso
 C:\Users\mark\source\repos\CyberArkAIM.NETExample\CyberArkAIM\bin\RestSharp.dll
 C:\Users\mark\source\repos\CyberArkAIM.NETExample\CyberArkAIM\bin\Newtonsoft.Json.xml
 C:\Users\mark\source\repos\CyberArkAIM.NETExample\CyberArkAIM\bin\RestSharp.xml
-C:\Users\mark\source\repos\CyberArkAIM.NETExample\CyberArkAIM\obj\Release\CyberArkAIM.csprojResolveAssemblyReference.cache
 C:\Users\mark\source\repos\CyberArkAIM.NETExample\CyberArkAIM\obj\Release\CyberArkAIM.csproj.CoreCompileInputs.cache
 C:\Users\mark\source\repos\CyberArkAIM.NETExample\CyberArkAIM\obj\Release\CyberArkAIM.dll
 C:\Users\mark\source\repos\CyberArkAIM.NETExample\CyberArkAIM\obj\Release\CyberArkAIM.pdb
+C:\Users\mark\source\repos\CyberArkAIM.NETExample\CyberArkAIM\obj\Release\CyberArkAIM.csprojResolveAssemblyReference.cache
