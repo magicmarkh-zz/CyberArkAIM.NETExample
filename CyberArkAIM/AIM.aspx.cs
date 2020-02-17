@@ -16,7 +16,6 @@ namespace CyberArkAIM
             //txtBaseUrl.Text = "";
             //txtSafe.Text = "";
             //txtObject.Text = "";
-
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e)
@@ -68,6 +67,7 @@ namespace CyberArkAIM
                 PSDKPasswordRequest passRequest = new
                 PSDKPasswordRequest();
                 PSDKPassword password;
+                string dbPort = "";
 
                 //Retreive values input by the user for items that exist in the vault
                 passRequest.AppID = txtAppId.Text;
@@ -88,12 +88,22 @@ namespace CyberArkAIM
                 passRequest.RequiredProperties.Add("userName");
                 passRequest.RequiredProperties.Add("Address");
                 passRequest.RequiredProperties.Add("Database");
+                passRequest.RequiredProperties.Add("Port");
 
                 // Sending the request to get the password
                 password = PasswordSDK.GetPassword(passRequest);
 
+                //set Port if available
+                try {
+                    dbPort = password.PasswordProperties["Port"].ToString();
+                }
+                catch
+                {
+                    dbPort = "1433";
+                }
+                
                 //Build the connection string with values returned from the Credential Provider
-                buildConnString(password.Address, password.Database, password.UserName, password.Content);
+                BuildConnString(password.Address, password.Database, password.UserName, password.Content, dbPort);
             }
             catch (PSDKException ex)
             {
@@ -106,12 +116,14 @@ namespace CyberArkAIM
             try
             {
                 //Build the GetPassword REST request
-                var client = new RestClient("http://" + txtBaseUrl.Text + "/AIMWebService/api/Accounts");
+                var client = new RestClient("https://" + txtBaseUrl.Text + "/AIMWebService/api/Accounts");
+                client.RemoteCertificateValidationCallback = (sender, certificate, chain, sslPolicyErrors) => true;
                 var request = new RestRequest(Method.GET);
                 request.AddHeader("content-type", "application/json");
                 request.AddQueryParameter("AppID", txtAppId.Text);
                 request.AddQueryParameter("Safe", txtSafe.Text);
                 request.AddQueryParameter("Folder", txtFolder.Text);
+                
 
 
                 //Are we retreiving a single or dual acct?
@@ -129,8 +141,19 @@ namespace CyberArkAIM
                 //Parse the response so that we can use values later
                 dynamic restReponse = JObject.Parse(response.Content);
 
+                string dbPort = "";
+                //set Port if available
+                try
+                {
+                    dbPort = restReponse.Port.ToString();
+                }
+                catch
+                {
+                    dbPort = "1433";
+                }
+
                 //Build the connection string with values returned from the Central Credential Provider
-                buildConnString(restReponse.Address.ToString(), restReponse.Database.ToString(), restReponse.UserName.ToString(), restReponse.Content.ToString());
+                BuildConnString(restReponse.Address.ToString(), restReponse.Database.ToString(), restReponse.UserName.ToString(), restReponse.Content.ToString(), dbPort);
             }
             catch (Exception ex)
             {
@@ -138,9 +161,9 @@ namespace CyberArkAIM
             }
         }
 
-        public void buildConnString(string strDataSource, string strDatabase, string strUserName, string strPassword)
+        public void BuildConnString(string strDataSource, string strDatabase, string strUserName, string strPassword, string strPort)
         {
-            connString = "Data Source=" + strDataSource + ";Initial Catalog=" + strDatabase + ";User ID=" + strUserName + ";Password=" + strPassword;
+            connString = "Data Source=" + strDataSource + "," + strPort + ";Initial Catalog=" + strDatabase + ";User ID=" + strUserName + ";Password=" + strPassword;
         }
     }
 }
